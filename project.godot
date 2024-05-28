@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot-Clickthrough-Addon"
+config/features=PackedStringArray("4.3", "C#")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Clickthrough="*res://addons/clickthrough/autoloads/clickthrough_gdscript/clickthrough_gdscript.tscn"
+
+[display]
+
+window/size/mode=2
+window/size/always_on_top=true
+window/size/transparent=true
+
+[dotnet]
+
+project/assembly_name="Godot-Clickthrough-Addon"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/clickthrough/plugin.cfg")
+
+[input]
+
+test={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(241, 13),"global_position":Vector2(245, 54),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
