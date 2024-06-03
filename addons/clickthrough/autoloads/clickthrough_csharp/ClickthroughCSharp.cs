@@ -29,7 +29,7 @@ public partial class ClickthroughCSharp : Node
 	public override void _Ready()
 	{
 		// We store the window handle
-		_hWnd = GetActiveWindow();
+		_hWnd = (IntPtr)DisplayServer.WindowGetNativeHandle(DisplayServer.HandleType.WindowHandle, GetWindow().GetWindowId());
 		
 		// We can set the properties already from here
 		SetWindowLong(_hWnd, GwlExStyle, WsExLayered );

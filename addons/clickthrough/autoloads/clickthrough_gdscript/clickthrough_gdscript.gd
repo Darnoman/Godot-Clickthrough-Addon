@@ -2,7 +2,7 @@
 #01. tool
 
 #02. class_name
-
+class_name ClickthroughGdscript
 #03. extends
 extends Node
 #endregion
