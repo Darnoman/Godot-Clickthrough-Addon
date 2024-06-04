@@ -14,15 +14,12 @@ config/name="Godot-Clickthrough-Addon"
 config/features=PackedStringArray("4.3", "C#")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Clickthrough="*res://addons/clickthrough/autoloads/clickthrough_gdscript/clickthrough_gdscript.tscn"
-
 [display]
 
 window/size/mode=2
 window/size/always_on_top=true
 window/size/transparent=true
+window/subwindows/embed_subwindows=false
 
 [dotnet]
 

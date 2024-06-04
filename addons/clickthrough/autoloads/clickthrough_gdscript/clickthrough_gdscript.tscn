@@ -4,3 +4,4 @@
 
 [node name="ClickthroughGdScript" type="Node"]
 script = ExtResource("1_l4q5i")
+use_default_detection_passthrough = null

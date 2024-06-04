@@ -9,13 +9,13 @@ public partial class clickthrough : EditorPlugin
 	public override void _EnterTree()
 	{
 		// Initialization of the plugin goes here.
-		AddAutoloadSingleton(AutoloadName, "res://addons/clickthrough/autoloads/clickthrough_gdscript/clickthrough_gdscript.tscn");
+		// AddAutoloadSingleton(AutoloadName, "res://addons/clickthrough/autoloads/clickthrough_gdscript/clickthrough_gdscript.tscn");
 	}
 
 	public override void _ExitTree()
 	{
 		// Clean-up of the plugin goes here.
-		RemoveAutoloadSingleton(AutoloadName);
+		// RemoveAutoloadSingleton(AutoloadName);
 	}
 }
 #endif
