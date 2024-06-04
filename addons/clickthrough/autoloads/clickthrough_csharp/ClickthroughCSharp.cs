@@ -4,12 +4,6 @@ using System.Runtime.InteropServices;
 
 public partial class ClickthroughCSharp : Node
 {
-    // Autoloaded
-	
-	// GetActiveWindow() retrieves the handle of the window. 
-	[DllImport("user32.dll")]
-	public static extern IntPtr GetActiveWindow();
-
 	// SetWindowLong() modifies a specific flag value associated with a window.
 	// We pass the window handle, the index of the property, and the flags the property will have
 	[DllImport("user32.dll")]
