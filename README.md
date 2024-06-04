@@ -5,3 +5,4 @@ Allows the ability to click through the game window when mouse is over non-trans
 **How To Use**
 1. Make the window transparent and always on top.
 2. Add "Clickthrough" node to scene.
+3. Add a "detector" to control when the passthrough should activate and deactivate
