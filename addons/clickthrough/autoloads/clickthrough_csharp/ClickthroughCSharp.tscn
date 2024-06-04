@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://4eoe7w32hidm"]
-
-[ext_resource type="Script" path="res://addons/clickthrough/autoloads/clickthrough_csharp/ClickthroughCSharp.cs" id="1_fydb6"]
-[ext_resource type="PackedScene" uid="uid://c4rawifcd7q17" path="res://addons/clickthrough/autoloads/clickthrough_csharp/mouse_detection/MouseDetection.tscn" id="2_bgoe4"]
-
-[node name="ClickThroughCSharp" type="Node"]
-script = ExtResource("1_fydb6")
-
-[node name="MouseDetection" parent="." instance=ExtResource("2_bgoe4")]

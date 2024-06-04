@@ -2,9 +2,9 @@
 #01. tool
 
 #02. class_name
-class_name Clickthrough
+
 #03. extends
-extends Node
+extends Area2D
 #endregion
 
 #region Documentation
@@ -25,33 +25,27 @@ extends Node
 #-----------------------------------------------------------
 #08. variables
 #-----------------------------------------------------------
-var clickthrough_csharp_packed_script: PackedScene = preload("res://addons/clickthrough/autoloads/clickthrough_csharp/ClickthroughCSharp.tscn")
-@onready var clickthrough_csharp = clickthrough_csharp_packed_script.instantiate()
-@onready var mouse_detection = clickthrough_csharp.get_node("MouseDetection")
-
-@export var use_default_detection_passthrough: bool = true:
-	set(value):
-		if value == use_default_detection_passthrough: return
-		use_default_detection_passthrough = value
-		if mouse_detection == null: return
-		mouse_detection.SetUseDefaultDetectPassthrough(value)
-		
-
+@onready var clickthrough: Clickthrough = get_parent()
 #-----------------------------------------------------------
 #09. methods
 #-----------------------------------------------------------
 func _ready() -> void:
-	add_child(clickthrough_csharp)
-	mouse_detection.SetUseDefaultDetectPassthrough(use_default_detection_passthrough)
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 	pass
 
-func set_clickthrough(value: bool) -> void:
-	clickthrough_csharp.SetClickthrough(value)
-	pass
-
-func set_clickability(value: bool) -> void:
-	mouse_detection.SetClickability(value)
+func _physics_process(delta: float) -> void:
+	global_position = get_global_mouse_position()
 	pass
 #-----------------------------------------------------------
 #10. signal methods
 #-----------------------------------------------------------
+
+func _on_area_entered(area: Area2D) -> void:
+	clickthrough.set_clickability(true)
+	pass
+
+func _on_area_exited(area: Area2D) -> void:
+	clickthrough.set_clickability(false)
+	pass
+#endregion

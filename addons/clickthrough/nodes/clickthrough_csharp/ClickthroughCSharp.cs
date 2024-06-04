@@ -27,10 +27,12 @@ public partial class ClickthroughCSharp : Node
 		
 		// We can set the properties already from here
 		SetWindowLong(_hWnd, GwlExStyle, WsExLayered );
+
+		SetClickthrough(true);
 	}
 	
 	// This function sets the property of being clickable or not, we will call this function from the mouse detection 
-	public void SetClickThrough(bool clickthrough)
+	public void SetClickthrough(bool clickthrough)
 	{
 		if (clickthrough)
 		{

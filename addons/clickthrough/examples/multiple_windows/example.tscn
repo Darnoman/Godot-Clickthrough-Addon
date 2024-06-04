@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bosbfg5o0uwlb"]
+
+[ext_resource type="Script" path="res://addons/clickthrough/nodes/clickthrough_gdscript/clickthrough_gdscript.gd" id="1_x62ys"]
+[ext_resource type="PackedScene" uid="uid://bcxwso7cge4dc" path="res://addons/clickthrough/detection/area/area_detector.tscn" id="2_h64ku"]
+[ext_resource type="PackedScene" uid="uid://blkxbgp2i3glp" path="res://addons/clickthrough/nodes/clickthrough_gdscript/clickthrough_gdscript.tscn" id="3_7g5le"]
+[ext_resource type="PackedScene" uid="uid://dgvbaum76wg1i" path="res://addons/clickthrough/detection/transparent/transparent_detector.tscn" id="4_j8qig"]
+[ext_resource type="Texture2D" uid="uid://crlrvohm2m7l7" path="res://icon.svg" id="5_cf4y8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0p6e"]
+size = Vector2(128, 128)
+
+[node name="Example" type="Node2D"]
+
+[node name="Clickthrough" type="Node" parent="."]
+script = ExtResource("1_x62ys")
+
+[node name="AreaDetector" parent="Clickthrough" instance=ExtResource("2_h64ku")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(104, 269)
+texture = ExtResource("5_cf4y8")
+
+[node name="Area2D" type="Area2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D"]
+shape = SubResource("RectangleShape2D_c0p6e")
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+initial_position = 1
+size = Vector2i(800, 600)
+always_on_top = true
+transparent = true
+
+[node name="Clickthrough" parent="Window" instance=ExtResource("3_7g5le")]
+
+[node name="TransparentDetector" parent="Window/Clickthrough" instance=ExtResource("4_j8qig")]
+
+[node name="Icon" type="Sprite2D" parent="Window"]
+position = Vector2(432, 194)
+texture = ExtResource("5_cf4y8")

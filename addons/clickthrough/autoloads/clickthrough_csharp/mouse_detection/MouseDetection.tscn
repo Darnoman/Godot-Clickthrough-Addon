@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4rawifcd7q17"]
-
-[ext_resource type="Script" path="res://addons/clickthrough/autoloads/clickthrough_csharp/mouse_detection/MouseDetection.cs" id="1_gsuek"]
-
-[node name="MouseDetection" type="Node"]
-script = ExtResource("1_gsuek")

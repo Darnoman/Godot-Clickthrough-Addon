@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgvbaum76wg1i"]
+
+[ext_resource type="Script" path="res://addons/clickthrough/detection/transparent/transparent_detector.gd" id="1_tavpw"]
+
+[node name="TransparentDetector" type="Node"]
+script = ExtResource("1_tavpw")

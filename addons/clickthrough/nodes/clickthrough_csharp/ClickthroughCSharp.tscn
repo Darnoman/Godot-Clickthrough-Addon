@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4eoe7w32hidm"]
+
+[ext_resource type="Script" path="res://addons/clickthrough/nodes/clickthrough_csharp/ClickthroughCSharp.cs" id="1_fydb6"]
+
+[node name="ClickThroughCSharp" type="Node"]
+script = ExtResource("1_fydb6")
