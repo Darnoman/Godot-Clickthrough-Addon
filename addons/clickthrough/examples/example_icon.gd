@@ -39,9 +39,6 @@ func _ready() -> void:
 	InputMap.action_add_event("click", left_click)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
-		print("TEST")
-
 	if Input.is_action_just_pressed("click") and is_mouse_over():
 		is_dragging = true
 		initial_position = global_position

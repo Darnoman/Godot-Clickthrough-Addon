@@ -16,10 +16,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/mode=2
-window/size/always_on_top=true
-window/size/transparent=true
 window/subwindows/embed_subwindows=false
+window/stretch/aspect="expand"
 
 [dotnet]
 

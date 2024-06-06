@@ -14,6 +14,7 @@ size = Vector2(128, 128)
 
 [node name="Clickthrough" type="Node" parent="."]
 script = ExtResource("1_x62ys")
+window_mode = 4
 
 [node name="AreaDetector" parent="Clickthrough" instance=ExtResource("2_h64ku")]
 
@@ -28,13 +29,11 @@ script = ExtResource("4_8dtw3")
 shape = SubResource("RectangleShape2D_c0p6e")
 
 [node name="Window" type="Window" parent="."]
-transparent_bg = true
 initial_position = 1
 size = Vector2i(800, 600)
-always_on_top = true
-transparent = true
 
 [node name="Clickthrough" parent="Window" instance=ExtResource("3_7g5le")]
+borderless = false
 
 [node name="TransparentDetector" parent="Window/Clickthrough" instance=ExtResource("4_j8qig")]
 
