@@ -26,6 +26,7 @@ extends Area2D
 #08. variables
 #-----------------------------------------------------------
 @onready var clickthrough: Clickthrough = get_parent()
+var active_areas = 0;
 #-----------------------------------------------------------
 #09. methods
 #-----------------------------------------------------------
@@ -42,10 +43,13 @@ func _physics_process(delta: float) -> void:
 #-----------------------------------------------------------
 
 func _on_area_entered(area: Area2D) -> void:
+	active_areas += 1
 	clickthrough.set_clickability(true)
 	pass
 
 func _on_area_exited(area: Area2D) -> void:
-	clickthrough.set_clickability(false)
+	active_areas -= 1
+	if active_areas <= 0:
+		clickthrough.set_clickability(false)
 	pass
 #endregion
